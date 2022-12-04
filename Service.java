@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public abstract class Services {
+public abstract class Service {
     String name ;
     protected ArrayList<String>providers ;
-    public abstract Providers getProvider(String p) ;
+    public abstract ServiceProvider getProvider(String p) ;
     public String getName() {
         return name;
     }

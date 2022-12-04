@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class LandLine extends Services{
+public class LandLine extends Service{
     // name + setter + getter
     public LandLine(){
         this.name = "Land Line Service" ;
@@ -8,8 +8,8 @@ public class LandLine extends Services{
         providers.add("Land-line Provider") ;
     }
     @Override
-    public Providers getProvider(String p){
-        Providers provider = new LandLineProvider() ;
+    public ServiceProvider getProvider(String p){
+        ServiceProvider provider = new LandLineProvider() ;
         return provider ;
     }
 }

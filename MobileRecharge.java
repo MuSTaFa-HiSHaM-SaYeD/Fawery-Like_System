@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class MobileRecharge extends Services {
+public class MobileRecharge extends Service {
     // name + setter + getter
     public MobileRecharge(){
         this.name = "Mobile Recharge Service" ;
@@ -13,10 +13,10 @@ public class MobileRecharge extends Services {
         providers.add("etisalat") ;
     }
     @Override
-    public Providers getProvider(String p){
+    public ServiceProvider getProvider(String p){
         int val = 0 ;
         String pro = p.toLowerCase() ;
-        Providers provider = null ;
+        ServiceProvider provider = null ;
         while(val==0){
             if(pro.contains("etisalat")){
                 provider = new EtisalatMobile() ;

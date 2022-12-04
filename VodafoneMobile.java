@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
-public class VodafoneMobile extends Providers{
+public class VodafoneMobile extends ServiceProvider{
     ArrayList<String> paymentMethods ;
     public VodafoneMobile(){
         name = "Vodafone_Mobile" ;
+        form = new Form() ;
         paymentMethods = new ArrayList<>() ;
         paymentMethods.add("Wallet") ;
         paymentMethods.add("Cash") ;

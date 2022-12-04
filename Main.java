@@ -1,18 +1,31 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
+/* Refund method flow 
+ * after the login 
+ * the customer choose to make a refund request which invoke(makeRefundRequest from the customer class)
+ * The makeRefundRequest will:
+ *  create a Storage object
+ *  invoke 
+ * 
+ */
+
 public class Main {
+
+    // you can instead of getting the service as a word from the user:
+    // you can print a numbered menu and he only enter the number of the service or choice he want 
+    // that way it will be easer for us
+	
     public static ArrayList<String> myAppServicese = new ArrayList<>() ;
-    public static Providers myProvider ;
-    public static Services myService ;
+    public static ServiceProvider myProvider ;
+    public static Service myService ;
+    
     public static void main(String[] args) {
-        // set myAppServices list
+
         appConfiguration();
-
-
     }
+    
+   
     public static void appConfiguration(){
 
         myAppServicese.add("Internet Payment") ;
@@ -26,28 +39,34 @@ public class Main {
         Scanner intVal = new Scanner(System.in) ;
 
         System.out.println("enter :");
-        System.out.println("1 to search for a service");
-        System.out.println("2 to see all services");
+        System.out.println("1- search for a service");
+        System.out.println("2- see all services");
+        System.out.println("3- make a refund request");
         choose = intVal.nextInt() ;
-        switch (choose){
-            case 1:  {
-                search() ;
-                break;
-            }
-            case 2:  {
-                listServices() ;
-                break;
-            }
-            case 3:  {
-                break;
-            }
-            default:  {
-                System.out.println("enter a valid number");
-                choose = intVal.nextInt() ;
-            }
+        boolean flag = false ;
+        while(flag==false) {
+        	switch (choose){
+	            case 1:  {
+	                search() ;
+	                flag = true ;
+	                break;
+	            }
+	            case 2:  {
+	                listServices() ;
+	                flag = true ;
+	                break;
+                }
+	            case 3:  {
+	                listServices() ;
+	                flag = true ;
+	                break;
+	            }
+	            default:  {
+	                System.out.println("enter a valid number");
+	                choose = intVal.nextInt() ;
+	            }
+	        }
         }
-
-
     }
     public static void listServices(){
         for (int i=0 ; i<myAppServicese.size() ; i++){
@@ -75,7 +94,7 @@ public class Main {
                 String pro = strVal.nextLine() ;
                 // factory method
                 myProvider = myService.getProvider(pro.toLowerCase()) ;
-                System.out.println("you got "+myProvider.name);
+                myProvider.getForm();
 
             }
             else if(service.contains("internet")){
@@ -87,7 +106,7 @@ public class Main {
                 String pro = strVal.nextLine() ;
                 // factory method
                 myProvider = myService.getProvider(pro) ;
-                System.out.println("you got "+myProvider.name);
+                myProvider.getForm() ;
             }
             else if(service.contains("land line")){
                 myService = new LandLine();
@@ -97,8 +116,8 @@ public class Main {
                 }
                 String pro = strVal.nextLine() ;
                 // factory method
-                myProvider = myService.getProvider(pro) ;
-                System.out.println("you got "+myProvider.name);
+                myProvider = myService.getProvider(pro) ;           
+                myProvider.getForm() ;
             }
             else if(service.contains("donat")){
                 myService = new Donation();
@@ -109,7 +128,7 @@ public class Main {
                 String pro = strVal.nextLine() ;
                 // factory method
                 myProvider = myService.getProvider(pro) ;
-                System.out.println("you got "+myProvider.name);
+                myProvider.getForm() ;
             }
             System.out.println("Enter the (name) of another Service , or (no) to exit ?");
             service = strVal.nextLine() ;

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Donation extends Services{
+public class Donation extends Service{
     // name + setter + getter
     public Donation(){
         this.name = "Donation Service" ;
@@ -11,10 +11,10 @@ public class Donation extends Services{
         providers.add("Schools") ;
     }
     @Override
-    public Providers getProvider(String p){
+    public ServiceProvider getProvider(String p){
         int val = 0 ;
         String pro = p.toLowerCase() ;
-        Providers provider = null ;
+        ServiceProvider provider = null ;
         while(val==0){
             if(pro.contains("school")){
                 provider = new ShcoolsProvider() ;

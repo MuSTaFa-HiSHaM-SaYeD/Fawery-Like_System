@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InternetPayment extends Services{
+public class InternetPayment extends Service{
     // name + setter + getter
     public InternetPayment(){
         this.name = "Internet Payment Service" ;
@@ -12,10 +12,10 @@ public class InternetPayment extends Services{
         providers.add("Etisalat Internet") ;
     }
     @Override
-    public Providers getProvider(String p){
+    public ServiceProvider getProvider(String p){
         int val = 0 ;
         String pro = p.toLowerCase() ;
-        Providers provider = null ;
+        ServiceProvider provider = null ;
         while(val==0){
             if(pro.contains("etisalat")){
                 provider = new EtisalatInternet() ;
