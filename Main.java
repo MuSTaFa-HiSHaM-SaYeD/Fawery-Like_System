@@ -11,6 +11,7 @@ public class Main {
         // set myAppServices list
         appConfiguration();
 
+        
 
     }
     public static void appConfiguration(){
