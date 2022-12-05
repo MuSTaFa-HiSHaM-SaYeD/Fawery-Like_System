@@ -1,7 +1,7 @@
 package All.System;
 
 import All.AutrticationSystem.AuthenticationSystem;
-import All.Discount.DiscountAPP;
+import All.DiscountSystem.DiscountAPP;
 import All.StorageSystem.Storage;
 import All.UserThings.Admin;
 import All.UserThings.User;
@@ -33,7 +33,7 @@ public class AdminSystem {
             choice1 = intVal.nextInt();
             if(choice1 == 1)
             {
-                dis.run();
+                //dis.run();
                 flag1=false;
             }
             else if (choice1 == 2) {

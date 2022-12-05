@@ -1,4 +1,4 @@
-package All.Discount;
+package All.DiscountSystem;
 
 import All.PaymentSystem.Form;
 import All.PaymentSystem.Payment;

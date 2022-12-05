@@ -3,9 +3,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import All.DiscountSystem.Discount;
 import All.UserThings.*;
 
 public class Storage {
+    String LastID = "0";
     HashMap<String, User> Emails = new HashMap<String, User>();
     public HashMap<String, User> getEmails() {
         return Emails;
@@ -17,14 +19,11 @@ public class Storage {
 
         Emails.put(user.getEmail(),user);
     }
+    public HashMap<String,Discount> Discounts = null;
 
-
-
-
-
-
-
-
+    public HashMap<String, Discount> getDiscounts() {
+        return Discounts;
+    }
 
     private ArrayList <Transaction> transactions;
 
@@ -37,7 +36,13 @@ public class Storage {
         transactions.remove(transaction);
     }
 
+    public void setLastID(String lastID) {
+        LastID = lastID;
+    }
 
+    public String getLastID() {
+        return LastID;
+    }
 
     public ArrayList<Transaction> getCustomerTransactions(Customer customer){
         ArrayList<Transaction> customerTransactions = new ArrayList<>();

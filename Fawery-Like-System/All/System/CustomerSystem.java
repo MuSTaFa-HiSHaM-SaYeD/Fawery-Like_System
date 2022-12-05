@@ -1,6 +1,7 @@
 package All.System;
 
 import All.AutrticationSystem.AuthenticationSystem;
+import All.DiscountSystem.PraintDiscoutList;
 import All.PaymentSystem.Payment;
 import All.PaymentSystem.PaymentAPP;
 import All.StorageSystem.Storage;
@@ -24,6 +25,7 @@ public class CustomerSystem {
         AuthenticationSystem Auth = new AuthenticationSystem();
         User U = new Customer();
         U = Auth.Autrticationsystem(d,U);
+        PraintDiscoutList pri = new PraintDiscoutList();
         myAppServicese.add("internet payment") ;
         myAppServicese.add("mobile payment") ;
         myAppServicese.add("land-line payment") ;
@@ -38,7 +40,8 @@ public class CustomerSystem {
         System.out.println("1- search for a service");
         System.out.println("2- see all services");
         System.out.println("3- make a refund request");
-        System.out.println("4- log out");
+        System.out.println("4- see discounts");
+        System.out.println("5- log out");
         choose = intVal.nextInt() ;
         boolean flag = false ;
         while(flag==false) {
@@ -59,6 +62,11 @@ public class CustomerSystem {
                     break;
                 }
                 case 4:  {
+                    pri.print(d);
+                    flag = true ;
+                    break;
+                }
+                case 5:  {
                     RetFlage = false;
                     flag = true ;
                     break;
