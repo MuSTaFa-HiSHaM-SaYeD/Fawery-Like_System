@@ -4,14 +4,14 @@ public class Customer extends User {
 
     Wallet wallet = new Wallet();
     Criditcard Card ;
-
+/*
     public Customer(String Email, String name, String passwords)
     {
         this.Email = Email;
         this.name = name;
         this.passwords = passwords;
     }
-
+*/
 
     public void setVisa(Criditcard visa) {
         this.Card = visa;

@@ -1,11 +1,11 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
 
 import java.util.Scanner;
 
-public class loginpage extends Authertication {
+public class loginpage extends Authentication {
     Scanner strVal = new Scanner(System.in) ;
     String UserEmail ;
     String Passwords ;

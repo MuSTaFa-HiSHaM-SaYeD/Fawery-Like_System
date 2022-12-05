@@ -1,16 +1,6 @@
 package All.PaymentSystem;
 
-import All.AutrticationSystem.*;
-import All.Discount.*;
-import All.MainProgram.*;
-import All.providers.*;
-import All.services.*;
-import All.UserThings.*;
-import All.PaymentSystem.*;
-
-import java.nio.file.attribute.AclEntryFlag;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Form {

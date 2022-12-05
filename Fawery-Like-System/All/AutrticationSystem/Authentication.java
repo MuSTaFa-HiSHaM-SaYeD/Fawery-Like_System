@@ -1,11 +1,11 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
 
-public abstract class Authertication {
+public abstract class Authentication {
     Storage D ;
-    Authertication(Storage D)
+    Authentication(Storage D)
     {
         this.D = D;
     }

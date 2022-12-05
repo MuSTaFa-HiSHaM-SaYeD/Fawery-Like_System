@@ -1,13 +1,14 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
+import All.UserThings.User;
 
 import java.util.Scanner;
 
-public class Autrtication_system {
+public class AuthenticationSystem {
 
-    public Customer Autrticationsystem(Storage d){
+    public Customer Autrticationsystem(Storage d, User usser){
         SignUpPage s = new SignUpPage(d);
         loginpage l = new loginpage(d);
         Customer u = null;
