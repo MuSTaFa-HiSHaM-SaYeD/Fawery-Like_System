@@ -1,12 +1,13 @@
 package All.StorageSystem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionStatus {
-    private String status;      
-    private ArrayList<String> statusList ;
-    
-    
+    private String status;
+    private ArrayList<String> statusList = new ArrayList<>(List.of("Completed","Refunded","In All.Refund","All.Refund Rejected"));
+
+
     void add (String status) {
 
         if (!statusList.contains(status)) {
@@ -14,18 +15,22 @@ public class TransactionStatus {
         }
 
     }
-    
+
     void remove (String status) {
         statusList.remove(status);
     }
 
-    
+
     boolean setStatus (String status) {
         if(statusList.contains(status)){
             this.status = status;
             return true;
         }
-        else    
+        else
             return false;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

@@ -6,41 +6,63 @@ import java.util.List;
 import All.UserThings.*;
 
 public class Storage {
-
     HashMap<String, User> Emails = new HashMap<String, User>();
-    private ArrayList<Transaction> transactions;
     public HashMap<String, User> getEmails() {
         return Emails;
     }
-
     public void setEmails(HashMap<String, User> emails) {
-
-
         Emails = emails;
     }
-    public void addTransaction(Transaction transaction){
-
-    }
-    public void removeTransaction(Transaction transaction){
-
-    }
-
     public void addUser(User user){
 
         Emails.put(user.getEmail(),user);
     }
 
-    public List<Transaction> getCustomerTransactions(Customer customer){
-        return transactions;
 
-    }
-    public List<Transaction> getRefundRequests(){
-        return transactions;
 
+
+
+
+
+
+
+    private ArrayList <Transaction> transactions;
+
+
+    public void addTransaction(Transaction transaction){
+        transactions.add(transaction);
     }
+
+    public void removeTransaction(Transaction transaction){
+        transactions.remove(transaction);
+    }
+
+
+
+    public ArrayList<Transaction> getCustomerTransactions(Customer customer){
+        ArrayList<Transaction> customerTransactions = new ArrayList<>();
+        for (Transaction t : transactions) {
+            if ( t.getCustomer() == customer ){
+                customerTransactions.add(t);
+            }
+        }
+        return customerTransactions;
+    }
+
+    public ArrayList<Transaction> getRefundRequests(){
+        ArrayList<Transaction> InRefundTransactions = new ArrayList<>();
+        for (Transaction t : transactions) {
+            if ( t.getStatus().equals("In All.Refund") ){
+                InRefundTransactions.add(t);
+            }
+        }
+
+        return InRefundTransactions;
+    }
+
     public boolean refundTransaction(Transaction transaction){
-        return false;
-
+        return transaction.setStatusAsRefunded();
     }
+
 
 }

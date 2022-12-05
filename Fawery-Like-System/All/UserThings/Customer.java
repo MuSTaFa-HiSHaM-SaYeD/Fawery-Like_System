@@ -3,6 +3,7 @@ package All.UserThings;
 public class Customer extends User {
 
     Wallet wallet = new Wallet();
+    // double wallet ;
     Criditcard Card ;
 /*
     public Customer(String Email, String name, String passwords)

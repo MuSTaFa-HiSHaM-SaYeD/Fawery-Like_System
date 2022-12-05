@@ -1,7 +1,7 @@
 package All.PaymentSystem;
 
-public abstract class Payment {
-	// User user ( has wallet , credit attributes )
-	public abstract void refund() ;
-	
+import All.UserThings.Customer;
+
+public interface Payment {
+    public void check_out(Customer c, Form F);
 }

@@ -5,7 +5,7 @@ import All.Discount.DiscountAPP;
 import All.StorageSystem.Storage;
 import All.UserThings.Admin;
 import All.UserThings.User;
-import All.refundSystem.RefundAPP;
+import All.refundSystem.Refund;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class AdminSystem {
         Scanner strVal = new Scanner(System.in) ;
         Scanner intVal = new Scanner(System.in) ;
         DiscountAPP dis = new DiscountAPP();
-        RefundAPP ref = new RefundAPP();
+        Refund ref = new Refund();
         AuthenticationSystem Auth = new AuthenticationSystem();
         User U = new Admin();
 
@@ -37,7 +37,7 @@ public class AdminSystem {
                 flag1=false;
             }
             else if (choice1 == 2) {
-                ref.run();
+                ref.approveAndRejectRefundRequests();
                 flag1=false;
             }
             else if (choice1 == 3) {

@@ -2,7 +2,8 @@ package All.UserThings;
 
 
 public class Wallet {
-    int mony = 0;
+
+    int mony = 0 ;
     public void addmony(int cash)
     {
         mony += cash;
