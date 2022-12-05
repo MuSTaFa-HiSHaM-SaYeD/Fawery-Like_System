@@ -1,6 +1,8 @@
 package All.AutrticationSystem;
 import All.StorageSystem.Storage;
+
 import All.UserThings.User;
+
 
 import java.util.Scanner;
 public class SignUpPage extends Authentication {
@@ -18,6 +20,7 @@ public class SignUpPage extends Authentication {
             return true;
         }
     }
+
     public User Signin(String Email , String name, String passwords, User u){
 
         String UserEmail = Email;
@@ -41,6 +44,7 @@ public class SignUpPage extends Authentication {
             u.setPasswords(passwords);
             D.addUser(u);
             return u;
+
         }
     }
 }

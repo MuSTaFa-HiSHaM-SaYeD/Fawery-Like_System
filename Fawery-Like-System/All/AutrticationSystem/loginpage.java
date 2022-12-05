@@ -2,7 +2,9 @@ package All.AutrticationSystem;
 
 
 import All.StorageSystem.Storage;
+
 import All.UserThings.User;
+
 
 import java.util.Scanner;
 
@@ -28,7 +30,9 @@ public class loginpage extends Authentication {
             return false;
         }
     }
+
     public User loin(String U, String P)
+
     {
         String UserEmail = U;
         String Passwords = P;

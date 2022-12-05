@@ -6,6 +6,7 @@ import java.util.List;
 import All.UserThings.*;
 
 public class Storage {
+
     HashMap<String, User> Emails = new HashMap<String, User>();
     private ArrayList<Transaction> transactions;
     public HashMap<String, User> getEmails() {
@@ -13,6 +14,8 @@ public class Storage {
     }
 
     public void setEmails(HashMap<String, User> emails) {
+
+
         Emails = emails;
     }
     public void addTransaction(Transaction transaction){
@@ -21,7 +24,9 @@ public class Storage {
     public void removeTransaction(Transaction transaction){
 
     }
+
     public void addUser(User user){
+
         Emails.put(user.getEmail(),user);
     }
 
