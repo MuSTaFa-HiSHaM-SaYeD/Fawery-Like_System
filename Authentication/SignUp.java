@@ -1,5 +1,10 @@
+<<<<<<< HEAD:Authentication/SignUp.java
 package Authentication;
 import Storage.Storage;
+=======
+package All.AutrticationSystem;
+import All.StorageSystem.Storage;
+>>>>>>> 690aa6e457948e83421bd16e1d9c25713b446141:Fawery-Like-System/All/AutrticationSystem/SignUpPage.java
 
 import Users.User;
 

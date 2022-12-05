@@ -72,7 +72,7 @@ public class CustomerSystem {
     }
     public static void listServices(){
         for (int i=0 ; i<myAppServicese.size() ; i++){
-            System.out.println((i+1) + " " + myAppServicese.get(i));
+            System.out.println( "-" + myAppServicese.get(i));
         }
         getLogic();
     }
@@ -91,7 +91,7 @@ public class CustomerSystem {
                 myService = new MobileRecharge();
                 System.out.println("Write the name of your provider");
                 for (int i = 0; i < myService.providers.size(); i++) {
-                    System.out.println((i + 1) + " " + myService.providers.get(i));
+                    System.out.println("-" + myService.providers.get(i));
                 }
                 String pro = strVal.nextLine();
                 // factory method

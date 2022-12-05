@@ -1,7 +1,13 @@
 package Authentication;
 
+<<<<<<< HEAD:Authentication/AuthenticationSystem.java
 import Storage.Storage;
 import Users.User;
+=======
+
+import All.StorageSystem.Storage;
+import All.UserThings.User;
+>>>>>>> 690aa6e457948e83421bd16e1d9c25713b446141:Fawery-Like-System/All/AutrticationSystem/AuthenticationSystem.java
 
 import java.util.Scanner;
 
