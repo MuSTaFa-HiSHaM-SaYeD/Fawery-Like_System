@@ -30,7 +30,7 @@ public class Main {
 
             CustomerSystem SysC = new CustomerSystem();
             AdminSystem SysA = new AdminSystem();
-            int choice0 = 1;
+            int choice0 ;
             System.out.println("Select what you need");
             System.out.println("1- Iam Admin");
             System.out.println("2- Iam Customer");
@@ -39,20 +39,11 @@ public class Main {
 
             if ( choice0 == 1)
             {
-                boolean temp1;
-                temp1 = SysA.appConfiguration(d);
-                flag0 = temp1;
+                SysA.appConfiguration(d);
             }
             else if (choice0 == 2) {
-                boolean temp2;
-                temp2 = SysC.appConfiguration(d);
-                if (temp2 == false)
-                {
-                    flag0 = true;
-                }
-                else {
-                    flag0 = false;
-                }
+                SysC.appConfiguration(d);
+
             }
             else if (choice0 == 3) {
                 flag0=false;

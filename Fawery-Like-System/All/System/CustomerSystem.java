@@ -20,7 +20,7 @@ public class CustomerSystem {
     static ArrayList<String> myAppServicese = new ArrayList<>() ;
     static ServiceProvider myProvider ;
     static Service myService ;
-    public static boolean appConfiguration(Storage d){
+    public static void appConfiguration(Storage d){
 
         AuthenticationSystem Auth = new AuthenticationSystem();
         User U = new Customer();
@@ -53,17 +53,17 @@ public class CustomerSystem {
                 }
                 case 2:  {
                     listServices(U) ;
-                    flag = true ;
+
                     break;
                 }
                 case 3:  {
                     new Refund().makeRefundRequest((Customer) U);
-                    flag = true ;
+
                     break;
                 }
                 case 4:  {
                     pri.print(d);
-                    flag = true ;
+
                     break;
                 }
                 case 5:  {
@@ -77,7 +77,7 @@ public class CustomerSystem {
                 }
             }
         }
-        return RetFlage;
+
     }
     public static void listServices(User u){
         for (int i=0 ; i<myAppServicese.size() ; i++){

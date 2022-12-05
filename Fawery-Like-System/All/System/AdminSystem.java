@@ -4,13 +4,14 @@ import All.AutrticationSystem.AuthenticationSystem;
 import All.DiscountSystem.DiscountAPP;
 import All.StorageSystem.Storage;
 import All.UserThings.Admin;
+import All.UserThings.Customer;
 import All.UserThings.User;
 import All.refundSystem.Refund;
 
 import java.util.Scanner;
 
 public class AdminSystem {
-    public boolean appConfiguration(Storage d)
+    public void appConfiguration(Storage d)
     {
         Scanner strVal = new Scanner(System.in) ;
         Scanner intVal = new Scanner(System.in) ;
@@ -19,39 +20,37 @@ public class AdminSystem {
         AuthenticationSystem Auth = new AuthenticationSystem();
         User U = new Admin();
 
-        boolean flag0 = true;
-        boolean flag1 = true;
+        boolean flag = false ;
         int choice1;
-        while (flag1)
+        while (flag==false)
         {
             U = Auth.Autrticationsystem(d,U);
             System.out.println("Select what you need");
             System.out.println("1- Add new discount");
             System.out.println("2- see refund requests");
             System.out.println("3- log out");
-            System.out.println("4- Exit");
             choice1 = intVal.nextInt();
-            if(choice1 == 1)
-            {
-                dis.add_discounts(d);
-            }
-            else if (choice1 == 2) {
-                ref.approveAndRejectRefundRequests();
-            }
-            else if (choice1 == 3) {
+            switch (choice1){
+                case 1:  {
+                    dis.add_discounts(d);
 
-                flag1=false;
-            }
-            else if (choice1 == 4) {
+                    break;
+                }
+                case 2:  {
+                    ref.approveAndRejectRefundRequests();
 
-                flag0=false;
-                flag1=false;
-            }
-            else {
-                System.out.println("Invalid Input");
+                    break;
+                }
+                case 3:  {
+
+                    flag = true ;
+                    break;
+                }
+                default:  {
+                    System.out.println("enter a valid number");
+                    choice1 = intVal.nextInt() ;
+                }
             }
         }
-
-        return flag0;
     }
 }

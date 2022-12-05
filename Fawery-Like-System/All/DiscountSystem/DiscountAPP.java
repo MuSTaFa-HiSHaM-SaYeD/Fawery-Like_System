@@ -112,12 +112,4 @@ public class DiscountAPP {
             }
         }
     }
-
-
-
-
-
-
-
-
 }
