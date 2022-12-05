@@ -1,11 +1,12 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
+import All.UserThings.User;
 
 import java.util.Scanner;
 
-public class loginpage extends Authertication {
+public class loginpage extends Authentication {
     Scanner strVal = new Scanner(System.in) ;
     String UserEmail ;
     String Passwords ;
@@ -27,7 +28,7 @@ public class loginpage extends Authertication {
             return false;
         }
     }
-    public Customer loin(String U, String P)
+    public User loin(String U, String P)
     {
         String UserEmail = U;
         String Passwords = P;

@@ -1,11 +1,12 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
+import All.UserThings.User;
 
-public abstract class Authertication {
+public abstract class Authentication {
     Storage D ;
-    Authertication(Storage D)
+    Authentication(Storage D)
     {
         this.D = D;
     }
@@ -13,7 +14,7 @@ public abstract class Authertication {
 
     public abstract boolean check(String U, String P);
 
-    public Customer geteUserAccount(String U){
+    public User geteUserAccount(String U){
         return D.getEmails().get(U);
     }
 }

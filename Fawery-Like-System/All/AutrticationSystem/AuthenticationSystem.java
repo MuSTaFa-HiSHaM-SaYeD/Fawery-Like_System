@@ -1,16 +1,17 @@
 package All.AutrticationSystem;
 
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
+import All.UserThings.User;
 
 import java.util.Scanner;
 
-public class Autrtication_system {
+public class AuthenticationSystem {
 
-    public Customer Autrticationsystem(Storage d){
+    public User Autrticationsystem(Storage d, User user){
         SignUpPage s = new SignUpPage(d);
         loginpage l = new loginpage(d);
-        Customer u = null;
+        //Customer u = null;
         int choose;
 
         String temp1;
@@ -31,7 +32,7 @@ public class Autrtication_system {
                     temp1 = strVal.nextLine();
                     temp2 = strVal.nextLine();
                     temp3 = strVal.nextLine();
-                    u = s.Signin(temp1,temp2,temp3);
+                    user = s.Signin(temp1,temp2,temp3,user);
                     System.out.println("success sign up");
                     flag = true;
                     break;
@@ -40,7 +41,7 @@ public class Autrtication_system {
                     System.out.println("please enter ID and passwords");
                     temp1 = strVal.nextLine();
                     temp2 = strVal.nextLine();
-                    u = l.loin(temp1,temp2);
+                    user = l.loin(temp1,temp2);
                     System.out.println("success log in");
 
                     flag = true;
@@ -52,6 +53,6 @@ public class Autrtication_system {
                 }
             }
         }
-        return u;
+        return user;
     }
 }

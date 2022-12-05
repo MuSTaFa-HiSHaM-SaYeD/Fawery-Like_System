@@ -1,9 +1,10 @@
 package All.AutrticationSystem;
 import All.UserThings.Customer;
-import All.MainProgram.Storage;
+import All.StorageSystem.Storage;
+import All.UserThings.User;
 
 import java.util.Scanner;
-public class SignUpPage extends Authertication {
+public class SignUpPage extends Authentication {
     Scanner strVal = new Scanner(System.in) ;
 
     SignUpPage(Storage D) {
@@ -18,13 +19,16 @@ public class SignUpPage extends Authertication {
             return true;
         }
     }
-    public Customer Signin(String Email , String name, String passwords){
+    public User Signin(String Email , String name, String passwords, User u){
 
         String UserEmail = Email;
         if (check(Email,passwords)){
-            Customer temp2 = new Customer(Email, name, passwords);
-            D.addUser(temp2);
-            return temp2;
+            //we will set now Email, name, passwords
+            u.setEmail(Email);
+            u.setName(name);
+            u.setPasswords(passwords);
+            D.addUser(u);
+            return u;
         }
         else
         {
@@ -32,9 +36,12 @@ public class SignUpPage extends Authertication {
                 System.out.println("email was exist please enter another email ");
                 UserEmail = strVal.nextLine();
             }
-            Customer temp2 = new Customer(UserEmail, name, passwords);
-            D.addUser(temp2);
-            return temp2;
+            //we will set now UserEmail, name, passwords
+            u.setEmail(UserEmail);
+            u.setName(name);
+            u.setPasswords(passwords);
+            D.addUser(u);
+            return u;
         }
     }
 }

@@ -1,12 +1,4 @@
-package All.MainProgram;
-
-import All.AutrticationSystem.*;
-import All.Discount.*;
-import All.MainProgram.*;
-import All.providers.*;
-import All.services.*;
-import All.UserThings.*;
-import All.PaymentSystem.*;
+package All.StorageSystem;
 
 import java.util.ArrayList;
 

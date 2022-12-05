@@ -1,15 +1,8 @@
 package All.services;
 
-import All.AutrticationSystem.*;
-import All.Discount.*;
-import All.MainProgram.*;
 import All.providers.*;
-import All.services.*;
-import All.UserThings.*;
-import All.PaymentSystem.*;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class MobileRecharge extends Service {
