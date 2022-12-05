@@ -1,12 +1,10 @@
-import java.nio.file.attribute.AclEntryFlag;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Form {
     double amount ;
     String clientName ; // there is no need to ask the customer for his name again !, as he already signed in.
-    // Payment paymentMethod;
+    Payment paymentMethod;
     String serviceNumber ;	// you didn't set this attribute from the user
     ArrayList<String>acceptedPayment ;
     int paymentMethodNumber ;

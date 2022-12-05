@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import javax.management.remote.SubjectDelegationPermission;
-
 public class CancerHospitalsProvider extends ServiceProvider{
     ArrayList<String> paymentMethods ;
     public CancerHospitalsProvider(){

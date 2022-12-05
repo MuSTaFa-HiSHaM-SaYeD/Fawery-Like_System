@@ -1,38 +1,41 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/* Refund method flow 
- * after the login 
+/* Refund method flow
+ * after the login
  * the customer choose to make a refund request which invoke(makeRefundRequest from the customer class)
  * The makeRefundRequest will:
  *  create a Storage object
- *  invoke 
- * 
+ *  invoke
+ *
  */
 
 public class Main {
 
     // you can instead of getting the service as a word from the user:
-    // you can print a numbered menu and he only enter the number of the service or choice he want 
+    // you can print a numbered menu and he only enter the number of the service or choice he want
     // that way it will be easer for us
-	
+
     public static ArrayList<String> myAppServicese = new ArrayList<>() ;
     public static ServiceProvider myProvider ;
     public static Service myService ;
-    
+
     public static void main(String[] args) {
 
         appConfiguration();
     }
-    
-   
+
+
     public static void appConfiguration(){
 
         myAppServicese.add("Internet Payment") ;
         myAppServicese.add("Mobile Payment") ;
         myAppServicese.add("Land-line Payment") ;
         myAppServicese.add("Donation") ;
-
+        Storage d = new Storage();
+        Customer cus = null;
+        Autrtication_system Autrtication = new Autrtication_system();
+        cus = Autrtication.Autrticationsystem(d);
         int choose ;
         String str ;
         Scanner strVal = new Scanner(System.in) ;
@@ -45,27 +48,27 @@ public class Main {
         choose = intVal.nextInt() ;
         boolean flag = false ;
         while(flag==false) {
-        	switch (choose){
-	            case 1:  {
-	                search() ;
-	                flag = true ;
-	                break;
-	            }
-	            case 2:  {
-	                listServices() ;
-	                flag = true ;
-	                break;
+            switch (choose){
+                case 1:  {
+                    search() ;
+                    flag = true ;
+                    break;
                 }
-	            case 3:  {
-	                listServices() ;
-	                flag = true ;
-	                break;
-	            }
-	            default:  {
-	                System.out.println("enter a valid number");
-	                choose = intVal.nextInt() ;
-	            }
-	        }
+                case 2:  {
+                    listServices() ;
+                    flag = true ;
+                    break;
+                }
+                case 3:  {
+                    cus.makeRefundRequest() ;
+                    flag = true ;
+                    break;
+                }
+                default:  {
+                    System.out.println("enter a valid number");
+                    choose = intVal.nextInt() ;
+                }
+            }
         }
     }
     public static void listServices(){
@@ -116,7 +119,7 @@ public class Main {
                 }
                 String pro = strVal.nextLine() ;
                 // factory method
-                myProvider = myService.getProvider(pro) ;           
+                myProvider = myService.getProvider(pro) ;
                 myProvider.getForm() ;
             }
             else if(service.contains("donat")){

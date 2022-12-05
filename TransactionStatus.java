@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionStatus {
-    private String status;      
-    private ArrayList<String> statusList ;
+    private String status;
+    private ArrayList<String> statusList = new ArrayList<>(List.of("Completed","Refunded","In Refund","Refund Rejected"));
     
     
     void add (String status) {
@@ -25,5 +26,9 @@ public class TransactionStatus {
         }
         else    
             return false;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }
