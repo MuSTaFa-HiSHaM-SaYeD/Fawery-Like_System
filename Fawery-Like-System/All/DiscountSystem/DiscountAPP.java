@@ -18,7 +18,8 @@ public class DiscountAPP {
 
     public void add_discounts(Storage d)
     {
-        HashMap<String, Discount> Discounts = d.getDiscounts();
+        HashMap<String, Discount> Discounts = new HashMap<String, Discount>();
+        Discounts= d.getDiscounts();
 
         Scanner intVal = new Scanner(System.in);
         boolean flag1 = true;

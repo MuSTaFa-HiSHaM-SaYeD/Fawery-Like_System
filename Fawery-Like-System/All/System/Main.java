@@ -23,13 +23,14 @@ public class Main {
     public static void main(String[] args) {
         Storage d = new Storage();
         boolean flag0 = true;
+        Scanner strVal = new Scanner(System.in) ;
+        Scanner intVal = new Scanner(System.in) ;
         while (flag0 == true)
         {
-            Scanner strVal = new Scanner(System.in) ;
-            Scanner intVal = new Scanner(System.in) ;
+
             CustomerSystem SysC = new CustomerSystem();
             AdminSystem SysA = new AdminSystem();
-            int choice0;
+            int choice0 = 1;
             System.out.println("Select what you need");
             System.out.println("1- Iam Admin");
             System.out.println("2- Iam Customer");

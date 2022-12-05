@@ -1,5 +1,7 @@
 package All.UserThings;
 
+import All.refundSystem.Refund;
+
 public class Customer extends User {
 
     Wallet wallet = new Wallet();
@@ -33,8 +35,10 @@ public class Customer extends User {
     {
         Card = new Criditcard(Email,Pass);
     }
-    public boolean makeRefundRequest(){
+    public void makeRefundRequest(Customer customer){
+        Refund refund = new Refund();
 
-        return false;
+        refund.makeRefundRequest(customer);
+
     }
 }

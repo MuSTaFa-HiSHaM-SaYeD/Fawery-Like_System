@@ -5,7 +5,7 @@ import All.services.Service;
 public class Discount {
     String id = "0";
     public int DiscountPersantage;
-    public int Max_num_of_transaction_Discount = Integer.parseInt(null);
+    public int Max_num_of_transaction_Discount;
     public String nameOfSevecesDiscount = null;
 
     public void setDiscountPersantage(int discountPersantage) {

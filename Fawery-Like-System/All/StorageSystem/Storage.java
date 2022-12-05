@@ -9,33 +9,24 @@ import All.UserThings.*;
 public class Storage {
     String LastID = "0";
     HashMap<String, User> Emails = new HashMap<String, User>();
+    private ArrayList <Transaction> transactions = new ArrayList<>();
+
     public HashMap<String, User> getEmails() {
         return Emails;
     }
     public void setEmails(HashMap<String, User> emails) {
         Emails = emails;
     }
+
     public void addUser(User user){
 
         Emails.put(user.getEmail(),user);
     }
-    public HashMap<String,Discount> Discounts = null;
+    public HashMap<String, Discount> Discounts = new HashMap<String,Discount>();
 
     public HashMap<String, Discount> getDiscounts() {
         return Discounts;
     }
-
-    private ArrayList <Transaction> transactions;
-
-
-    public void addTransaction(Transaction transaction){
-        transactions.add(transaction);
-    }
-
-    public void removeTransaction(Transaction transaction){
-        transactions.remove(transaction);
-    }
-
     public void setLastID(String lastID) {
         LastID = lastID;
     }
@@ -43,7 +34,14 @@ public class Storage {
     public String getLastID() {
         return LastID;
     }
+    public void addTransaction(Transaction transaction){
+        transactions.add(transaction);
+    }
 
+    public void removeTransaction(Transaction transaction){
+        transactions.remove(transaction);
+    }
+//here to
     public ArrayList<Transaction> getCustomerTransactions(Customer customer){
         ArrayList<Transaction> customerTransactions = new ArrayList<>();
         for (Transaction t : transactions) {
@@ -55,14 +53,28 @@ public class Storage {
     }
 
     public ArrayList<Transaction> getRefundRequests(){
+
         ArrayList<Transaction> InRefundTransactions = new ArrayList<>();
-        for (Transaction t : transactions) {
-            if ( t.getStatus().equals("In All.Refund") ){
-                InRefundTransactions.add(t);
+
+        // check first if there any Transactions exist
+        if(transactions.size() == 0 )
+            System.out.println("There Is No Transactions Recorded In The System");
+
+        else
+        {
+            for (Transaction t : transactions) {
+                if ( t.getStatus().equals("In All.Refund") ){
+                    InRefundTransactions.add(t);
+                }
             }
+
+            if(InRefundTransactions.size() == 0 )
+                System.out.println("There Is No Refund Requests made by the customers");
+
         }
 
         return InRefundTransactions;
+
     }
 
     public boolean refundTransaction(Transaction transaction){

@@ -19,7 +19,7 @@ public class AdminSystem {
         AuthenticationSystem Auth = new AuthenticationSystem();
         User U = new Admin();
 
-        boolean flag0 = false;
+        boolean flag0 = true;
         boolean flag1 = true;
         int choice1;
         while (flag1)
@@ -33,18 +33,18 @@ public class AdminSystem {
             choice1 = intVal.nextInt();
             if(choice1 == 1)
             {
-                //dis.run();
-                flag1=false;
+                dis.add_discounts(d);
             }
             else if (choice1 == 2) {
                 ref.approveAndRejectRefundRequests();
-                flag1=false;
             }
             else if (choice1 == 3) {
-                flag0 = true;
+
                 flag1=false;
             }
             else if (choice1 == 4) {
+
+                flag0=false;
                 flag1=false;
             }
             else {

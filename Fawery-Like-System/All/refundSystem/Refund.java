@@ -7,43 +7,45 @@ import All.UserThings.Customer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 public class Refund {
 
-    
-    public void makeRefundRequest(Customer customer){
-        
+    public void makeRefundRequest(Customer customer) {
+
         Scanner scanner = new Scanner(System.in);
         Storage storage = new Storage();
         ArrayList<Transaction> customerTransactions;
-        
-        int ans=1;
-        while(ans == 1){
-            
+
+        int ans = 1;
+        while (ans == 1) {
+
             customerTransactions = storage.getCustomerTransactions(customer);
-            int input=-1;
-            while(input > customerTransactions.size() || input < 0 ){
-                
-                System.out.println("Choose The Transaction You Want To All.Refund:");
-                for (int i=0;i<customerTransactions.size();i++) {
-                    System.out.println(i+1 +" "+ customerTransactions.get(i).toString());
+
+            if(customerTransactions.size() == 0 ){
+                System.out.println("You Didn't Make Any Transaction yet");
+                break;
+            }
+
+            int input = -1;
+            while (input > customerTransactions.size() || input < 0) {
+
+                System.out.println("Choose The Transaction You Want To Refund:");
+                for (int i = 0; i < customerTransactions.size(); i++) {
+                    System.out.println(i + 1 + " " + customerTransactions.get(i).toString());
                 }
-    
+
                 input = scanner.nextInt();
-            } 
+            }
             customerTransactions.get(input).setStatusAsInRefund();
 
-            ans=-1;
-            while(ans != 0 || ans != 1){
+            ans = -1;
+            while (ans != 0 || ans != 1) {
                 System.out.println("Do you want to make another refund request?\n0- No\n1- Yes)");
                 ans = scanner.nextInt();
             }
 
         }
         scanner.close();
-    } 
-
+    }
 
     public void approveAndRejectRefundRequests() {
         Storage storage = new Storage();
@@ -53,6 +55,10 @@ public class Refund {
         while (ans == 1) {
 
             ArrayList<Transaction> refundRequests = storage.getRefundRequests();
+
+            if (refundRequests.size() == 0) {
+                break;
+            }
 
             int chosenTransaction = -1;
             while (chosenTransaction > refundRequests.size() || chosenTransaction < 0) {
@@ -88,8 +94,6 @@ public class Refund {
 
         }
 
-        scanner.close();
     }
-
 
 }
