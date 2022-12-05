@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 public class AuthenticationSystem {
 
-    public Customer Autrticationsystem(Storage d, User usser){
+
+    public User Autrticationsystem(Storage d, User user){
         SignUpPage s = new SignUpPage(d);
         loginpage l = new loginpage(d);
-        Customer u = null;
+
         int choose;
 
         String temp1;
@@ -32,7 +33,9 @@ public class AuthenticationSystem {
                     temp1 = strVal.nextLine();
                     temp2 = strVal.nextLine();
                     temp3 = strVal.nextLine();
-                    u = s.Signin(temp1,temp2,temp3);
+
+                    user = s.Signin(temp1,temp2,temp3,user);
+
                     System.out.println("success sign up");
                     flag = true;
                     break;
@@ -41,7 +44,9 @@ public class AuthenticationSystem {
                     System.out.println("please enter ID and passwords");
                     temp1 = strVal.nextLine();
                     temp2 = strVal.nextLine();
-                    u = l.loin(temp1,temp2);
+
+                    user = l.loin(temp1,temp2);
+
                     System.out.println("success log in");
 
                     flag = true;
@@ -53,6 +58,8 @@ public class AuthenticationSystem {
                 }
             }
         }
-        return u;
+
+        return user;
+
     }
 }
