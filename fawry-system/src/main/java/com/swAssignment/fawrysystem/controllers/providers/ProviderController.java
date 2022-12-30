@@ -1,4 +1,4 @@
-package com.swAssignment.fawrysystem.BSL.transactions.providers;
+package com.swAssignment.fawrysystem.controllers.providers;
 
 import com.swAssignment.fawrysystem.Common;
 import com.swAssignment.fawrysystem.BSL.PaymentBsl;
