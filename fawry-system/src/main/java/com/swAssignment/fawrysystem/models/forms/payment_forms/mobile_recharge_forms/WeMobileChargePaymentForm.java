@@ -1,5 +1,5 @@
-package com.fci.fawrySystem.persons_service.models.forms.payment_forms.mobile_recharge_forms;
+package com.swAssignment.fawrysystem.models.forms.payment_forms.mobile_recharge_forms;
 
-import com.fci.fawrySystem.persons_service.models.forms.payment_forms.PaymentForm;
+import com.swAssignment.fawrysystem.models.forms.payment_forms.PaymentForm;
 
 public class WeMobileChargePaymentForm extends PaymentForm{}

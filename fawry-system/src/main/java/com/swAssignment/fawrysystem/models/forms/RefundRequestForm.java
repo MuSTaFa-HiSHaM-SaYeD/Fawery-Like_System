@@ -1,4 +1,4 @@
-package com.fci.fawrySystem.persons_service.models.forms;
+package com.swAssignment.fawrysystem.models.forms;
 
 public class RefundRequestForm extends Form{
     private String serviceName;
